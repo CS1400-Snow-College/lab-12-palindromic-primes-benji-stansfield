@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lab-12-palindromic-primes-benji-stansfield")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6876f4afce79feb208e27a115cecc6a387fee1a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e65018c34b2e53a5106c1d6f0ebb7f1e9b6e0692")]
 [assembly: System.Reflection.AssemblyProductAttribute("lab-12-palindromic-primes-benji-stansfield")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lab-12-palindromic-primes-benji-stansfield")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
