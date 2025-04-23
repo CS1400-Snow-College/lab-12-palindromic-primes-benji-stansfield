@@ -98,3 +98,5 @@ static long GetNthPalindromicPrime(int n)
     return number;
 }
 
+/*The process is slow if the numbers are bigger (1000+) and I'm not sure how to optimize it, but it works*/
+
