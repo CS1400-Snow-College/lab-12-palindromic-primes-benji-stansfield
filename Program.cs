@@ -8,10 +8,16 @@ Console.Clear();
 Debug.Assert(IsPrime(25005) == false);
 Debug.Assert(IsPrime(171713) == true);
 Debug.Assert(IsPrime(1) == false);
+
 //IsPalindromic tests
 Debug.Assert(IsPalindromic(12321) == true);
 Debug.Assert(IsPalindromic(231) == false);
 Debug.Assert(IsPalindromic(8) == true);
+
+//NthPalindromicPrime tests
+Debug.Assert(GetNthPalindromicPrime(100) == 94049 == true);
+Debug.Assert(GetNthPalindromicPrime(3) == 191 == false);
+Debug.Assert(GetNthPalindromicPrime(3) == 5 == true);
 
 int nthNumber = 0;
 
@@ -36,15 +42,15 @@ do
 }
 while (nthNumber < 1);
 
-//long result = GetNthPalindromicPrime(nthNumber);
-//Console.Write($"The {nthNumber} palindromic prime is {result}.");
+long result = GetNthPalindromicPrime(nthNumber);
+Console.Write($"The {nthNumber} palindromic prime is {result}.");
 
 /*Check for prime numbers*/
 static bool IsPrime(int candidate)
 {
     if (candidate == 2 || candidate == 3)
         return true;
-    if (candidate < 2)
+    if (candidate < 2 || candidate % 2 == 0)
         return false;
     for (int i = 3; i <= Math.Sqrt(candidate); i += 2) //skips even numbers (always divisible by 2)
     {
@@ -74,5 +80,21 @@ static bool IsPalindromic(int candidate)
     return true;
 }
 
-/*static long GetNthPalindromicPrime()*/
+/*Find the palindromic prime*/
+static long GetNthPalindromicPrime(int n)
+{
+    int count = 0;
+    int number = 1;
+
+    while (count < n)
+    {
+        number++;
+        if (IsPrime(number) && IsPalindromic(number))
+        {
+            count++;
+        }
+    }
+
+    return number;
+}
 
