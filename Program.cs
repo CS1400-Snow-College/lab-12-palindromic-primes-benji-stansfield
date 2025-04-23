@@ -8,6 +8,10 @@ Console.Clear();
 Debug.Assert(IsPrime(25005) == false);
 Debug.Assert(IsPrime(171713) == true);
 Debug.Assert(IsPrime(1) == false);
+//IsPalindromic tests
+Debug.Assert(IsPalindromic(12321) == true);
+Debug.Assert(IsPalindromic(231) == false);
+Debug.Assert(IsPalindromic(8) == true);
 
 int nthNumber = 0;
 
@@ -51,10 +55,24 @@ static bool IsPrime(int candidate)
     return true;
 }
 
-/*static bool IsPalindromic(int candidate)
+/*Check for palindromic numbers*/
+static bool IsPalindromic(int candidate)
 {
+    string numString = Convert.ToString(candidate);
+    char[] numbers = new char[numString.Length];
+    for (int i = 0; i < numString.Length; i++) //copies the numbers into the array
+    {
+        numbers[i] = numString[i];
+    }
 
+    Array.Reverse(numbers);
+    string reverseNumString = new string(numbers);
+
+    if (reverseNumString != numString)
+        return false; //returns false if the number is not the same forwards and backwards
+
+    return true;
 }
 
-static long GetNthPalindromicPrime()*/
+/*static long GetNthPalindromicPrime()*/
 
